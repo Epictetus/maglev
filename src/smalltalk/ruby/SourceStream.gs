@@ -6,8 +6,8 @@
 !=========================================================================
 doit
 UserGlobals at:#SourceStream ifAbsent:[
- Object subclass: 'SourceStream'
-  instVarNames: #(
+Object subclass: 'SourceStream'
+category: 'MagLev-User Classes'  instVarNames: #(
     position
     input
     inputSize 
@@ -24,8 +24,8 @@ UserGlobals at:#SourceStream ifAbsent:[
 %
 doit
 UserGlobals at:#FileSourceStream ifAbsent:[
- SourceStream subclass: 'FileSourceStream'
-  instVarNames: #()
+SourceStream subclass: 'FileSourceStream'
+category: 'MagLev-User Classes'  instVarNames: #()
   classVars: #()  classInstVars: #()  poolDictionaries: { }
   inDictionary: UserGlobals 
 ]

@@ -34,8 +34,8 @@ run
 | oldCls |
 oldCls := Globals at:#IndentingStream otherwise: nil .
 oldCls == nil ifTrue:[
- Object subclass: 'IndentingStream'
-  instVarNames: #( indentLevel stream )
+Object subclass: 'IndentingStream'
+category: 'MagLev-User Classes'  instVarNames: #( indentLevel stream )
   classVars: #()
   classInstVars: #()
   poolDictionaries: { }
