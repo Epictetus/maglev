@@ -1,6 +1,7 @@
+category: '*maglev-as yet unclassified'
 ! file: Exception_ruby.gs
 
-category: 'Ruby support'
+category: '*maglev-Ruby support'
 classmethod: AbstractException
 commentRubyMapping
 ^ '

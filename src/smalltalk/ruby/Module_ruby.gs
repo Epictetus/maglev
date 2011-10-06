@@ -1,3 +1,4 @@
+category: '*maglev-as yet unclassified'
 !=========================================================================
 ! Copyright (C) VMware, Inc. 2008-2011.  All Rights Reserved.
 !
@@ -14,7 +15,7 @@
 
 set class Module
 
-category: 'Documentation'
+category: '*maglev-Documentation'
 classmethod: 
 comment
 ^ 'Module is identically the Ruby class Module.
@@ -42,7 +43,7 @@ comment
 
 ! sprintf:with:  in base smalltalk image
 
-category: 'Browsing'
+category: '*maglev-Browsing'
 method:
 definition
 
@@ -51,7 +52,7 @@ definition
 %
 
 
-category: 'Wrapping Smalltalk classes'
+category: '*maglev-Wrapping Smalltalk classes'
 classmethod:
 _wrappedSmalltalkClasses
 
@@ -433,7 +434,7 @@ ZeroDivide .     1  "mapped to Ruby by Ruby bootstrap"
  }
 %
 
-category: 'Ruby support'
+category: '*maglev-Ruby support'
 
 method:
 transientMethodDictForEnv: envId put: aValue

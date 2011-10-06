@@ -1,3 +1,4 @@
+category: '*maglev-as yet unclassified'
 !=========================================================================
 ! Copyright (C) VMware, Inc. 2008-2011.  All Rights Reserved.
 !
@@ -10,7 +11,7 @@
 !  environment 1 by  Ruby code in  prims.rb .
 !=========================================================================
 
-category: 'Ruby numeric'
+category: '*maglev-Ruby numeric'
 
 ! _rubyAdd:, _rubySubtract: , _rubyMultiply:  not needed in SmallInteger
 !  special sends will fall back to Integer .
@@ -565,7 +566,7 @@ _rubyTo_: anInteger
 ^ Range from: self limit: anInteger 
 %
 
-category: 'Ruby numeric'
+category: '*maglev-Ruby numeric'
 method: Integer 
 _asHexDigest
 

@@ -1,3 +1,4 @@
+category: '*maglev-as yet unclassified'
 !=========================================================================
 ! Copyright (C) VMware, Inc. 2008-2011.  All Rights Reserved.
 !
@@ -11,7 +12,7 @@ set class RubyTime
 removeallmethods
 removeallclassmethods
 
-category: 'Documentation'
+category: '*maglev-Documentation'
 classmethod:
 comment
 ^ 'Instances of RubyTime represent time since 00:00:00 UTC 01 January 1970.
@@ -34,7 +35,7 @@ comment
 %
 
 
-category: 'Ruby support'
+category: '*maglev-Ruby support'
 classmethod:
 now
 

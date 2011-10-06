@@ -1,3 +1,4 @@
+category: '*maglev-as yet unclassified'
 !=========================================================================
 ! Copyright (C) VMware, Inc. 2008-2011.  All Rights Reserved.
 !
@@ -9,7 +10,7 @@ set class RubyDirectory
 removeallmethods
 removeallclassmethods
 
-category: 'Documentation'
+category: '*maglev-Documentation'
 classmethod:
 comment
 ^ 'Instances of RubyDirectory represent a directory on the file system
@@ -19,7 +20,7 @@ comment
    '
 %
 
-category: 'Ruby support'
+category: '*maglev-Ruby support'
 
 classmethod:
 _prim: opcode with: aString  with: anInt

@@ -1,3 +1,4 @@
+category: '*maglev-as yet unclassified'
 !=========================================================================
 ! Copyright (C) VMware, Inc. 2008-2011.  All Rights Reserved.
 !
@@ -82,7 +83,7 @@ run
 
 !-----------------------------------------------------------------
 set class IndentingStream
-category: 'Documentation'
+category: '*maglev-Documentation'
 classmethod:
 comment
 ^
@@ -92,7 +93,7 @@ comment
 '
 %
 
-category: 'Instance creation'
+category: '*maglev-Instance creation'
 classmethod:
 on: aStream
   ^self new stream: aStream
@@ -212,7 +213,7 @@ run
 true
 %  
 
-category: 'Documentation'
+category: '*maglev-Documentation'
 classmethod:
 comment
 ^ '
@@ -242,7 +243,7 @@ comment
  src/comparse.ht and src/bytecode.ht .
 '
 %
-category: 'Accessing'
+category: '*maglev-Accessing'
 classmethod:
 rubyCompatibilityLevel
   "Returns 18 for MRI 1.8 compatibility, 19 for MRI 1.9, etc "
@@ -280,7 +281,7 @@ hasPosition
   ^ srcOffset ~~ nil or:[ lineNumber ~~ nil ]
 %
 
-category: 'Printing'
+category: '*maglev-Printing'
 method:
 printOn: aStream
 
@@ -305,7 +306,7 @@ printString
   ^ strm contents .
 %
 
-category: 'Updating'
+category: '*maglev-Updating'
 method:
 lineNumber: aSmallInteger
   "to be used only after initializating the node .
@@ -329,14 +330,14 @@ validateEnvironment: anInteger
   ^ anInteger
 %
 
-category: 'Transformation'
+category: '*maglev-Transformation'
 method:
 returnNode
 
 ^ GsComReturnNode new return: self
 %
 
-category: 'Accessing'
+category: '*maglev-Accessing'
 method:
 kind
   ^ kind
@@ -349,7 +350,7 @@ varLeaf
 
 !------------------------------------------------------------
 set class GsComLitLeaf
-category: 'Documentation'
+category: '*maglev-Documentation'
 classmethod:
 comment
 ^
@@ -391,7 +392,7 @@ comment
 '
 %
 
-category: 'Printing'
+category: '*maglev-Printing'
 method:
 printFormattedOn: aStream
 
@@ -400,13 +401,13 @@ printFormattedOn: aStream
           print:' litKind:' int: litKind ;
       nextPut: $) ; cr .
 %
-category: 'Instance creation'
+category: '*maglev-Instance creation'
 classmethod:
 newNil
   ^ self new specialLiteral: nil
 %
 
-category: 'Instance Initialization'
+category: '*maglev-Instance Initialization'
 method:
 setIRnodeKind
   kind :=  COMPAR_LIT_LEAF
@@ -565,7 +566,7 @@ methodLiteral: anASTnode
   litKind := COMPAR_METHOD_LIT .
 %
 
-category: 'Accessing'
+category: '*maglev-Accessing'
 method:
 symbolLiteralValue
   litKind == COMPAR_SYM_LIT ifFalse:[ self error:'not a symbol leaf' ].
@@ -575,7 +576,7 @@ symbolLiteralValue
 !------------------------------------------------------------
 set class GsComVarLeaf
 
-category: 'Documentation'
+category: '*maglev-Documentation'
 classmethod:
 comment
 ^
@@ -606,7 +607,7 @@ comment
   within a single compilation.
 '
 %
-category: 'Printing'
+category: '*maglev-Printing'
 method:
 printFormattedOn: aStream
 
@@ -637,7 +638,7 @@ varKindString
 %
 
 
-category: 'Instance creation'
+category: '*maglev-Instance creation'
 classmethod:
 new
 "create an instance registered with VM for finalization of cData"
@@ -646,7 +647,7 @@ new
 self _primitiveFailed: #new
 %
 
-category: 'Instance Initialization'
+category: '*maglev-Instance Initialization'
 method:
 setIRnodeKind
   kind :=  COMPAR_VAR_LEAF
@@ -767,7 +768,7 @@ instanceVariable: ivNameSymbol ivOffset: oneBasedIvOfs
     ]
   ].
 %
-category: 'Accessing'
+category: '*maglev-Accessing'
 method:
 varOffset
   ^ varOffset
@@ -791,7 +792,7 @@ litVarValue
   ^ litVarAssoc _value
 %
 
-category: 'Querying'
+category: '*maglev-Querying'
 method
 isTemp
   "return true if varKind one of 
@@ -804,11 +805,11 @@ isArg
   ^ varKind == COMPAR_METHOD_ARG_VAR or:[ varKind == COMPAR_BLOCK_ARG_VAR]
 %
 
-category: 'Instance Initialization'
+category: '*maglev-Instance Initialization'
 !------------------------------------------------------------
 set class GsComSelectorLeaf
 
-category: 'Documentation'
+category: '*maglev-Documentation'
 classmethod:
 comment
 ^ 
@@ -837,7 +838,7 @@ comment
   otherwise specialSendClass is nil .
 '
 %
-category: 'Printing'
+category: '*maglev-Printing'
 method:
 printFormattedOn: aStream
 
@@ -849,12 +850,12 @@ printFormattedOn: aStream
       nextPut: $) .
 %
 
-category: 'Instance Initialization'
+category: '*maglev-Instance Initialization'
 method:
 setIRnodeKind
 %
 
-category: 'Initialization'
+category: '*maglev-Initialization'
 classmethod: 
 _initializeSpecialSelectors
   | specSendsDict specialISAdict objectSpecSends data |
@@ -1019,7 +1020,7 @@ selectorForSuper: aSymbol
   ^ aSymbol
 %
 
-category: 'Accessing'
+category: '*maglev-Accessing'
 method:
 selector
   ^ selector
@@ -1050,7 +1051,7 @@ classToRubyClassName: aClass
 !------------------------------------------------------------
 set class GsComArrayBuilderNode
 
-category: 'Documentation'
+category: '*maglev-Documentation'
 classmethod:
 comment
 ^
@@ -1067,7 +1068,7 @@ comment
 '
 %
 
-category: 'Instance creation'
+category: '*maglev-Instance creation'
 classmethod:
 _basicNew
 "create an instance registered with VM for finalization of cData"
@@ -1081,7 +1082,7 @@ new
 ^ self _basicNew initialize
 %
 
-category: 'Printing'
+category: '*maglev-Printing'
 method:
 printFormattedOn: aStream
 
@@ -1092,7 +1093,7 @@ printFormattedOn: aStream
 %
 
 
-category: 'Instance Initialization'
+category: '*maglev-Instance Initialization'
 
 classmethod:
 new
@@ -1127,7 +1128,7 @@ size
 !------------------------------------------------------------
 set class GsComAssignmentNode
 
-category: 'Documentation'
+category: '*maglev-Documentation'
 classmethod:
 comment
 ^
@@ -1138,7 +1139,7 @@ comment
     assignKind , a SmallInteger , 0 = normal, 1 = method arg default value
 '
 %
-category: 'Printing'
+category: '*maglev-Printing'
 method:
 printFormattedOn: aStream
 
@@ -1151,7 +1152,7 @@ printFormattedOn: aStream
   aStream indentLess ; nextPutAll: '))'  ; cr .
 %
 
-category: 'Instance Initialization'
+category: '*maglev-Instance Initialization'
 
 method:
 dest: aGsComVarLeaf source: sourceNode
@@ -1171,7 +1172,7 @@ setMethodArgDefault
 !------------------------------------------------------------
 set class GsComMethNode
 
-category: 'Documentation'
+category: '*maglev-Documentation'
 classmethod:
 comment
 ^
@@ -1242,7 +1243,7 @@ comment
 '
 %
 
-category: 'Printing'
+category: '*maglev-Printing'
 method:
 printFormattedOn: aStream
   super printOn: aStream .
@@ -1279,7 +1280,7 @@ fileNameForPrint
   res add: $' .
   ^ res
 %
-category: 'Accessing'
+category: '*maglev-Accessing'
 
 classmethod: 
 maxRubyFixedArgs
@@ -1295,15 +1296,15 @@ selector
   ^ selector
 %
 
-category: 'Instance Initialization'
+category: '*maglev-Instance Initialization'
 
-category: 'Accessing'
+category: '*maglev-Accessing'
 method:
 arguments
   ^ arguments
 %
 
-category: 'Instance creation'
+category: '*maglev-Instance creation'
 classmethod:
 new
 
@@ -1536,7 +1537,7 @@ rubyDefaultReturnArg: argNum
 !------------------------------------------------------------
 set class GsComBlockNode
 
-category: 'Documentation'
+category: '*maglev-Documentation'
 classmethod:
 comment
 ^
@@ -1555,7 +1556,7 @@ comment
    terms  , an Array, used only for Gemstone select block, {:x| ... }
 '
 %
-category: 'Printing'
+category: '*maglev-Printing'
 method:
 printFormattedOn: aStream
   super printOn: aStream .
@@ -1567,7 +1568,7 @@ printFormattedOn: aStream
   nextPut: $) ; cr .
 %
 
-category: 'Instance creation'
+category: '*maglev-Instance creation'
 classmethod:
 new
 "create an instance registered with VM for finalization of cData"
@@ -1576,7 +1577,7 @@ new
 self _primitiveFailed: #new
 %
 
-category: 'Instance Initialization'
+category: '*maglev-Instance Initialization'
 
 method:
 lexLevel: aLevel
@@ -1757,7 +1758,7 @@ _computeLastLineNumber
   sz > 1 ifTrue:[ self error:'could not find a last source position'].
 %
 
-category: 'Accessing'
+category: '*maglev-Accessing'
 method: 
 args
   ^ args
@@ -1775,7 +1776,7 @@ lexLevel
 !------------------------------------------------------------
 set class GsComCascadeNode
 
-category: 'Documentation'
+category: '*maglev-Documentation'
 classmethod:
 comment
 ^
@@ -1788,7 +1789,7 @@ comment
     sends, an Array , each element is a GsComSendNode 
 '
 %
-category: 'Printing'
+category: '*maglev-Printing'
 method:
 printFormattedOn: aStream
   super printOn: aStream .
@@ -1797,7 +1798,7 @@ printFormattedOn: aStream
     nextPut: $) ; cr .
 %
 
-category: 'Instance Initialization'
+category: '*maglev-Instance Initialization'
 
 method:
 rcvr: aNode
@@ -1814,7 +1815,7 @@ appendSend: aNode
 !------------------------------------------------------------
 set class GsComLiteralNode
 
-category: 'Documentation'
+category: '*maglev-Documentation'
 classmethod:
 comment
 ^ ' A GsComLiteralNode represents a push or load of the literal specifed
@@ -1823,14 +1824,14 @@ comment
     leaf , a GsComLitLeaf 
 '
 %
-category: 'Instance Creation'
+category: '*maglev-Instance Creation'
 classmethod:
 newInteger: aSmallInt
  ^ self new leaf: (GsComLitLeaf new  integerLiteral: aSmallInt)
 %
 
 
-category: 'Instance Creation'
+category: '*maglev-Instance Creation'
 classmethod:
 newObject: anObject
  ^ self new leaf: (GsComLitLeaf new  objectLiteral: anObject)
@@ -1866,7 +1867,7 @@ newString: aString
   ^ self new leaf: (GsComLitLeaf new stringLiteral: str ).
 %
 
-category: 'Printing'
+category: '*maglev-Printing'
 method:
 printFormattedOn: aStream
   super printOn: aStream .
@@ -1881,7 +1882,7 @@ leaf: aGsComLitLeaf
   kind := COMPAR_LIT_NODE .
 %
 
-category: 'Accessing'
+category: '*maglev-Accessing'
 method:
 symbolLiteralValue
   | val |
@@ -1894,7 +1895,7 @@ symbolLiteralValue
 !------------------------------------------------------------
 set class GsComReturnNode
 
-category: 'Documentation'
+category: '*maglev-Documentation'
 classmethod:
 comment
 ^ ' A GsComReturnNode represents a return from a method or block
@@ -1908,7 +1909,7 @@ comment
 
 '
 %
-category: 'Printing'
+category: '*maglev-Printing'
 method:
 printFormattedOn: aStream
   super printOn: aStream .
@@ -1918,7 +1919,7 @@ printFormattedOn: aStream
   aStream indentLess ; nextPut: $) ; cr .
 %
 
-category: 'Instance Initialization'
+category: '*maglev-Instance Initialization'
 
 method:
 return: aNode
@@ -1946,7 +1947,7 @@ breakFromRubyBlock: aNode
 !------------------------------------------------------------
 set class GsComSendNode
 
-category: 'Documentation'
+category: '*maglev-Documentation'
 classmethod:
 comment
 ^
@@ -1974,7 +1975,7 @@ comment
     to a special branch bytecode . It must be specified by the parser.
 '
 %
-category: 'Printing'
+category: '*maglev-Printing'
 method:
 printFormattedOn: aStream
   | sel |
@@ -1995,7 +1996,7 @@ printFormattedOn: aStream
   nextPut: $) ; cr .
 %
 
-category: 'Class Initialization'
+category: '*maglev-Class Initialization'
 classmethod:
 initialize
   "initialize the control op dictionary; these are the selectors for
@@ -2059,7 +2060,7 @@ GsComSendNode initialize. ^ true
 %
 
 set class GsComSendNode
-category: 'Transformation'
+category: '*maglev-Transformation'
 method:
 optimizationPossible
   "Return true if optimization to an in-line  branch or loop could be possible,
@@ -2071,7 +2072,7 @@ optimizationPossible
   ^ (ControlOpDict at: sel otherwise: 0 ) ~~ 0 
 % 
 
-category: 'Transformation'
+category: '*maglev-Transformation'
 method:
 optimize
 
@@ -2089,13 +2090,13 @@ optimize
   ]
 %
 
-category: 'Instance Creation'
+category: '*maglev-Instance Creation'
 classmethod:
 new
   ^ self _basicNew initialize
 %
 
-category: 'Instance Initialization'
+category: '*maglev-Instance Initialization'
 
 method:
 initialize
@@ -2175,7 +2176,7 @@ appendArgument: aNode
 !------------------------------------------------------------
 set class GsComVariableNode
 
-category: 'Documentation'
+category: '*maglev-Documentation'
 classmethod:
 comment
 ^' A GsComVariableNode node represents a fetch from a 
@@ -2185,7 +2186,7 @@ comment
      leaf  , a GsComVarLeaf
 '
 %
-category: 'Instance Creation'
+category: '*maglev-Instance Creation'
 classmethod:
 globalNamed: aSymbol inDict: aDictionary
 | assoc node |
@@ -2202,7 +2203,7 @@ newSelf
 ^ node
 %
 
-category: 'Printing'
+category: '*maglev-Printing'
 method:
 printFormattedOn: aStream
   super printOn: aStream .
@@ -2210,7 +2211,7 @@ printFormattedOn: aStream
   aStream   nextPut: $) ; cr .
 %
 
-category: 'Instance Initialization'
+category: '*maglev-Instance Initialization'
 method:
 leaf: aGsComVarLeaf
 
@@ -2218,13 +2219,13 @@ kind := COMPAR_VAR_NODE .
 leaf := aGsComVarLeaf
 %
 
-category: 'Accessing'
+category: '*maglev-Accessing'
 method:
 litVarValue
   ^ leaf litVarValue
 %
 
-category: 'Accessing'
+category: '*maglev-Accessing'
 method:
 litVarValueOrNil
   ^ leaf litVarValue
@@ -2241,7 +2242,7 @@ varLeaf
 !------------------------------------------------------------
 set class GsComPathNode
 
-category: 'Documentation'
+category: '*maglev-Documentation'
 classmethod:
 comment
 ^ 
@@ -2251,13 +2252,13 @@ comment
   Instances should not be generated by the Ruby parser.
 '
 %
-category: 'Printing'
+category: '*maglev-Printing'
 method:
 printOn: aStream
   super printOn: aStream .
   aStream nextPut: $) ; cr .
 %
-category: 'Instance creation'
+category: '*maglev-Instance creation'
 classmethod:
 new
 
@@ -2269,7 +2270,7 @@ self shouldNotImplement: #new
 !------------------------------------------------------------
 set class GsComTermNode
 
-category: 'Documentation'
+category: '*maglev-Documentation'
 classmethod:
 comment
 ^ '
@@ -2278,14 +2279,14 @@ comment
   Instances should not be generated by the Ruby parser.
 '
 %
-category: 'Printing'
+category: '*maglev-Printing'
 method:
 printOn: aStream
   super printOn: aStream .
   aStream nextPut: $) ; cr .
 %
 
-category: 'Instance creation'
+category: '*maglev-Instance creation'
 classmethod:
 new
 
@@ -2296,7 +2297,7 @@ self shouldNotImplement: #new
 !------------------------------------------------------------
 set class GsComLabelNode
 
-category: 'Documentation'
+category: '*maglev-Documentation'
 classmethod:
 comment
 ^ 
@@ -2311,7 +2312,7 @@ comment
    lexLevel , a SmallInteger , lexical level of this label
 '
 %
-category: 'Printing'
+category: '*maglev-Printing'
 method:
 printFormattedOn: aStream
   super printOn: aStream  .
@@ -2319,7 +2320,7 @@ printFormattedOn: aStream
      print:' lexLevel:' int: lexLevel ;
   nextPut: $) ; cr .
 %
-category: 'Instance creation'
+category: '*maglev-Instance creation'
 classmethod:
 _basicNew
 "create an instance registered with VM for finalization of cData"
@@ -2333,7 +2334,7 @@ new
 ^ self _basicNew initialize
 %
 
-category: 'Instance Initialization'
+category: '*maglev-Instance Initialization'
 method:
 initialize
   argForValue := false .
@@ -2363,7 +2364,7 @@ argForValue
 !------------------------------------------------------------
 set class GsComGotoNode
 
-category: 'Documentation'
+category: '*maglev-Documentation'
 classmethod:
 comment
 ^
@@ -2380,7 +2381,7 @@ comment
    targetKind , a ComParGotoKind
 '
 %
-category: 'Printing'
+category: '*maglev-Printing'
 method:
 printFormattedOn: aStream
   super printOn: aStream .
@@ -2393,7 +2394,7 @@ printFormattedOn: aStream
     ifFalse:[ argNode printFormattedOn: aStream  ].
   aStream nextPut: $) ; cr .
 %
-category: 'Instance creation'
+category: '*maglev-Instance creation'
 classmethod:
 _basicNew
 "create an instance registered with VM for finalization of cData"
@@ -2402,13 +2403,13 @@ _basicNew
 self _primitiveFailed: #_basicNew
 %
 
-category: 'Instance creation'
+category: '*maglev-Instance creation'
 classmethod:
 new
   ^ self _basicNew initialize
 %
 
-category: 'Instance Initialization'
+category: '*maglev-Instance Initialization'
 method:
 initialize
   kind := COMPAR_GOTO_NODE .
@@ -2453,7 +2454,7 @@ argNode: anIrNode
 !------------------------------------------------------------
 set class GsComLoopNode
 
-category: 'Documentation'
+category: '*maglev-Documentation'
 classmethod:
 comment
 ^
@@ -2466,13 +2467,13 @@ comment
 '
 %
 
-category: 'Instance creation'
+category: '*maglev-Instance creation'
 classmethod:
 new
   ^ self _basicNew initialize
 %
 
-category: 'Instance Initialization'
+category: '*maglev-Instance Initialization'
 method:
 initialize
   kind := COMPAR_LOOP_NODE .
@@ -2491,7 +2492,7 @@ method:
 breakLabel: aLabelNode
   breakLabel := aLabelNode
 %
-category: 'Printing'
+category: '*maglev-Printing'
 method:
 printFormattedOn: aStream
   super printOn: aStream .
@@ -2510,7 +2511,7 @@ printFormattedOn: aStream
 !------------------------------------------------------------
 set class GsComStatementsNode
 
-category: 'Documentation'
+category: '*maglev-Documentation'
 classmethod:
 comment
 ^
@@ -2521,13 +2522,13 @@ comment
 '
 %
 
-category: 'Instance creation'
+category: '*maglev-Instance creation'
 classmethod:
 new
   ^ self _basicNew initialize
 %
 
-category: 'Instance Initialization'
+category: '*maglev-Instance Initialization'
 method:
 initialize
   kind := COMPAR_STATEMENTS_NODE .
@@ -2537,7 +2538,7 @@ method:
 list: anArray
   list := anArray
 %
-category: 'Printing'
+category: '*maglev-Printing'
 method:
 printFormattedOn: aStream
   super printOn: aStream .

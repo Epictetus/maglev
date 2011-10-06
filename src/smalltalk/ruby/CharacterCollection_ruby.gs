@@ -1,3 +1,4 @@
+category: '*maglev-as yet unclassified'
 
 !=========================================================================
 ! Copyright (C) GemStone Systems, Inc. 2008-2011.  All Rights Reserved.
@@ -10,5 +11,5 @@ set class CharacterCollection
 
 !  additional methods  for String to support Ruby
 
-category: 'Ruby support'
+category: '*maglev-Ruby support'
 

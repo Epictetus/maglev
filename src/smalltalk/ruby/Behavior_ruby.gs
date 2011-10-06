@@ -1,3 +1,4 @@
+category: '*maglev-as yet unclassified'
 !=========================================================================
 ! Copyright (C) VMware, Inc. 2008-2011.  All Rights Reserved.
 !
@@ -7,7 +8,7 @@
 !=========================================================================
 set class Behavior
 
-category: 'Ruby support'
+category: '*maglev-Ruby support'
 
 method: 
 isRubyVirtual

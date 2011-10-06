@@ -1,3 +1,4 @@
+category: '*maglev-as yet unclassified'
 !=========================================================================
 ! Copyright (C) VMware, Inc. 2008-2011.  All Rights Reserved.
 !
@@ -9,7 +10,7 @@ set class RubyConstantRef
 removeallmethods
 removeallclassmethods
 
-category: 'Documentation'
+category: '*maglev-Documentation'
 classmethod:
 comment
 ^ 'RubyConstantRef is a subclass of Array .
@@ -33,7 +34,7 @@ comment
    '
 %
 
-category: 'Ruby support'
+category: '*maglev-Ruby support'
 method:
 setGlobalAssoc_noMarkDirty: anAssoc
 

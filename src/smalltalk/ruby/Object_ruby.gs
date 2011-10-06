@@ -1,3 +1,4 @@
+category: '*maglev-as yet unclassified'
 !=========================================================================
 ! Copyright (C) VMware, Inc. 2008-2011.  All Rights Reserved.
 !
@@ -7,7 +8,7 @@
 !=========================================================================
 set class Object
 
-category: 'Ruby Class Membership'
+category: '*maglev-Ruby Class Membership'
 method:
 class
 "return first non-virtual non-singleton class at or above receiver's class.
@@ -43,14 +44,14 @@ _isRubyString
 %
 
 
-category: 'Ruby compare'
+category: '*maglev-Ruby compare'
 method:
 _rubyEqualQ: anObject
   ^ self == anObject
 %
 
 !-------------------------------
-category: 'Ruby Message Handling'
+category: '*maglev-Ruby Message Handling'
 
 method:
 _doesNotUnderstand: aSymbol args: anArray envId: envId reason: dnuKind
@@ -172,7 +173,7 @@ with: argOne with: argTwo with: argThree block: blk perform: aSymbol env: envId
 
 
 !-------------------------------
-category: 'Ruby enumeration'
+category: '*maglev-Ruby enumeration'
 set class Object
 method:
 _rubyEach1: aBlock
@@ -223,7 +224,7 @@ __superEach: aBlock
 
 
 !-------------------------------
-category: 'Ruby support'
+category: '*maglev-Ruby support'
 method:
 _ruby_eqlQ: anObject
 
@@ -242,7 +243,7 @@ _rubyNilQ
 !  _rubyTo: , _rubyTo_:    implemented in .mcz
 
 
-category: 'Ruby private'
+category: '*maglev-Ruby private'
 method:
 _addRubySingletonClass: committedOk envId: envId
 

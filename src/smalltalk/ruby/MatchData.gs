@@ -1,3 +1,4 @@
+category: '*maglev-as yet unclassified'
 !=========================================================================
 ! Copyright (C) VMware, Inc. 2008-2011.  All Rights Reserved.
 !
@@ -11,7 +12,7 @@ set class  MatchData
 removeallmethods
 removeallclassmethods
 
-category: 'Private'
+category: '*maglev-Private'
 classmethod:
 new: aSize
  "disallowed, instances are created by Regexp methods "

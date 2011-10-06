@@ -1,3 +1,4 @@
+category: '*maglev-as yet unclassified'
 ! methods that must be reloaded after each RubyContext reset
 !   methods must be duplicated for each supported ruby environment
 !  currently env 1 is customer's Ruby execution, 
@@ -8,7 +9,7 @@
 !   need to have selector begin with '__'  to prevent them
 !  from being visible to list-methods queries from ruby 
 
-category: 'Ruby topaz support'
+category: '*maglev-Ruby topaz support'
 
 set compile_env: 1
 method: Object
@@ -18,7 +19,7 @@ __topazPerform1: aSelector withArguments: argsArray
 ^ self @env0:perform: aSelector env: 1 withArguments: argsArray
 %
 
-category: 'Ruby bootstrap support'
+category: '*maglev-Ruby bootstrap support'
 !---------------------------------
 set compile_env: 0
 method: Object

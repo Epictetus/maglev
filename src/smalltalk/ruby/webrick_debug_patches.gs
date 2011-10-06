@@ -1,4 +1,5 @@
-category: 'patches'
+category: '*maglev-as yet unclassified'
+category: '*maglev-patches'
 
 method: Object
 rubyPrint: aString

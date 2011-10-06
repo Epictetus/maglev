@@ -1,3 +1,4 @@
+category: '*maglev-as yet unclassified'
 ! debug version , see normal code in RubyConstantRef_resolv_debug.gs 
 
 method: RubyConstantRef

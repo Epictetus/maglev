@@ -1,3 +1,4 @@
+category: '*maglev-as yet unclassified'
 !=========================================================================
 ! Copyright (C) VMware, Inc. 2008-2011.  All Rights Reserved.
 !
@@ -10,7 +11,7 @@ set class RcRubyMethodDictionary
 removeallmethods
 removeallclassmethods
 
-category: 'Updating'
+category: '*maglev-Updating'
 method: 
 _keyCollisionOk
   "RC replay allows two sessions to write to same key ,

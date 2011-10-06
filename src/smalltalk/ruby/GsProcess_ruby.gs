@@ -1,3 +1,4 @@
+category: '*maglev-as yet unclassified'
 !=========================================================================
 ! Copyright (C) VMware, Inc. 2008-2011.  All Rights Reserved.
 !
@@ -9,7 +10,7 @@
 set class GsProcess
 ! adding additional methods , don't 'removeallmethods'
 
-category: 'Ruby support'
+category: '*maglev-Ruby support'
 
 !Allow subclasses of GsProcess for Ruby
 expectvalue true
@@ -373,7 +374,7 @@ clearIoSelectResult
   ^ res
 %
 
-category: 'Private Ruby Scheduling'
+category: '*maglev-Private Ruby Scheduling'
 method:
 _reapEvents
   waitingOn := nil . 

@@ -1,3 +1,4 @@
+category: '*maglev-as yet unclassified'
 !=========================================================================
 ! Copyright (C) VMware, Inc. 2008-2011.  All Rights Reserved.
 !
@@ -10,7 +11,7 @@ set class ExecBlock
 
 ! adding additional methods , don't 'removeallmethods'
 
-category: 'Ruby support'
+category: '*maglev-Ruby support'
 
 method:
 _copyForRuby: opcode newBlockMethsInto: anArray
@@ -58,7 +59,7 @@ blockArg _validateClass: ExecBlock .
 ! see ASSUME_envId1 in  src/intswitch.c  for places where envId==1 is 
 !  assumed in handling of an Exception for a Ruby rescue on a Module .
 !
-category: 'Block Evaluation'
+category: '*maglev-Block Evaluation'
 method: 
 rescue1: anExceptionClass do: handlerBlock
  "Try to evaluate the receiver, which should be a zero-argument block.

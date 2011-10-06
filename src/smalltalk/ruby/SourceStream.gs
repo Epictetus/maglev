@@ -1,3 +1,4 @@
+category: '*maglev-as yet unclassified'
 !=========================================================================
 ! Copyright (C) VMware, Inc. 2008-2011.  All Rights Reserved.
 !
@@ -31,7 +32,7 @@ category: 'MagLev-User Classes'  instVarNames: #()
 ]
 %
 set class SourceStream
-category: 'Private'
+category: '*maglev-Private'
 classmethod:
 _initClassVars
 
@@ -43,7 +44,7 @@ doit
 SourceStream  _initClassVars 
 %
 
-category: 'Documentation'
+category: '*maglev-Documentation'
 classmethod:
 comment
 " source stream classes for Ruby parser to use.   
@@ -61,7 +62,7 @@ comment
 %
 
 
-category: 'Instance Creation'
+category: '*maglev-Instance Creation'
 classmethod:
 on: aGsFileOrString
 
@@ -79,7 +80,7 @@ res initializeWith: aGsFileOrString .
 ^ res
 %
 
-category: 'Private'
+category: '*maglev-Private'
 classmethod:
 _setBufferSizes_normal: aNorm max: aMax
 
@@ -89,27 +90,27 @@ MaxSmallSize := aMax .
 NormalBufSize := aNorm .
 %
 
-category: 'Constants'
+category: '*maglev-Constants'
 method:
 eofCharacter
 
 ^ EofCharacter 
 %
 
-category: 'Accessing'
+category: '*maglev-Accessing'
 method:
 position
   ^ position
 %
 
-category: 'Accessing'
+category: '*maglev-Accessing'
 method:
 atEnd
 
 ^ inputAtEnd
 %
 
-category: 'Private'
+category: '*maglev-Private'
 method: 
 initialize
 
@@ -125,7 +126,7 @@ normalBufSize
  ^ NormalBufSize
 %
 
-category: 'Private'
+category: '*maglev-Private'
 method: 
 initializeWith: aString
 
@@ -142,7 +143,7 @@ inputSize > MaxSmallSize ifTrue:[
 ].
 %
 
-category: 'Accessing'
+category: '*maglev-Accessing'
 method:
 peek
 | startPos res newBufPos |
@@ -156,7 +157,7 @@ self position: startPos .
 ^ res
 %
 
-category: 'Private'
+category: '*maglev-Private'
 method:
 _currBuf_position: aPosition
 
@@ -170,7 +171,7 @@ newBufPos := bufPosition - (position - aPosition) .
 ^ false
 %
 
-category: 'Positioning'
+category: '*maglev-Positioning'
 method:
 position: aPosition
 
@@ -223,7 +224,7 @@ self _seek: position .
 self _readNextChunk .
 %
 
-category: 'Accessing'
+category: '*maglev-Accessing'
 method:
 nextMatching: aString
 
@@ -267,7 +268,7 @@ halfArg := aString copyFrom:(halfArg size + 1) to: argSize .
 %
 
 
-category: 'Accessing'
+category: '*maglev-Accessing'
 method:
 next
 "Return the next character.  position is advanced to one past
@@ -310,7 +311,7 @@ bufPosition := 2 .
 ^ buf at: 1 .
 %
 
-category: 'Private'
+category: '*maglev-Private'
 method:
 _readNextChunk
 | numToRead |
@@ -320,7 +321,7 @@ input copyFrom:position to: (position + numToRead - 1)
 ^ numToRead
 %
 
-category: 'Private'
+category: '*maglev-Private'
 method:
 _seek: aPosition
 
@@ -329,7 +330,7 @@ _seek: aPosition
 
 
 
-category: 'Accessing'
+category: '*maglev-Accessing'
 method:
 advanceToEol
 
@@ -351,7 +352,7 @@ advanceToEol
 ]
 %
 
-category: 'Private'
+category: '*maglev-Private'
 method:
 _currBuf_advanceToEol
 "advance to the next CR or LF within current buffer.
@@ -377,7 +378,7 @@ position := position + ( bSize - bPosStart ) .
 ^ nil
 %
 
-category: 'Accessing'
+category: '*maglev-Accessing'
 method:
 advanceTo_columnOneEqualsEnd
 
@@ -412,7 +413,7 @@ eolCount := 0 .
 
 !--------------------------------------------
 set class FileSourceStream
-category: 'Private'
+category: '*maglev-Private'
 
 method:
 initializeWith: aGsFile

@@ -1,3 +1,4 @@
+category: '*maglev-as yet unclassified'
 !=========================================================================
 ! Copyright (C) VMware, Inc. 2008-2011.  All Rights Reserved.
 !
@@ -12,7 +13,7 @@ set class DateTime
 
 ! adding additional methods , don't 'removeallmethods'
 
-category: 'Ruby support'
+category: '*maglev-Ruby support'
 
 method:
 asFloat

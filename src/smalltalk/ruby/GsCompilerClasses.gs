@@ -1,3 +1,4 @@
+category: '*maglev-as yet unclassified'
 ! file  image/ruby/GsCompilerClasses.gs
 
 expectvalue %String

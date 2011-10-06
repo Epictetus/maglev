@@ -1,3 +1,4 @@
+category: '*maglev-as yet unclassified'
 !=========================================================================
 ! Copyright (C) VMware, Inc. 2008-2011.  All Rights Reserved.
 !
@@ -11,7 +12,7 @@ set class  Regexp
 removeallmethods
 removeallclassmethods
 
-category: 'Ruby private'
+category: '*maglev-Ruby private'
 classmethod:
 _basicNew
 
@@ -31,7 +32,7 @@ new
 
 
 
-category: 'Ruby support'
+category: '*maglev-Ruby support'
 classmethod: 
 new: aStringOrRegexp
   "Return a new instance of the receiver, 
@@ -108,7 +109,7 @@ optsFromLang: aString opts: opts
 %
 
 !------------------ Regexp instance methods 
-category: 'Private'
+category: '*maglev-Private'
 
 method:
 _compile: aString options: anInteger
@@ -178,7 +179,7 @@ _matchCBytes:aCByteArray from: startOffset limit: limitOffset string: aString
 %
 
 
-category: 'Ruby support'
+category: '*maglev-Ruby support'
 method:
 rubyPrivateSize
 ^ 2 "inline  Regexp instSize"

@@ -1,3 +1,4 @@
+category: '*maglev-as yet unclassified'
 !=========================================================================
 ! Copyright (C) VMware, Inc. 2008-2011.  All Rights Reserved.
 !
@@ -9,7 +10,7 @@ set class RubyHash
 removeallmethods
 removeallclassmethods
 
-category: 'Ruby support'
+category: '*maglev-Ruby support'
 
 classmethod:
 _basicNew: aSize
@@ -24,7 +25,7 @@ self _primitiveFailed: #_basicNew: args: { aSize } .
 ^ nil
 %
 
-category: 'Smalltalk behavior'
+category: '*maglev-Smalltalk behavior'
 classmethod:
 new
   ^ self @ruby1:new
@@ -47,7 +48,7 @@ at: aKey put: aValue
   ^ self @ruby1:__atkey_put: aKey _: aValue
 %
 
-category: 'Ruby support'
+category: '*maglev-Ruby support'
 
 classmethod: 
 rubyPrivateInstSize

@@ -1,3 +1,4 @@
+category: '*maglev-as yet unclassified'
 !=========================================================================
 ! Copyright (C) VMware, Inc. 2008-2011.  All Rights Reserved.
 !
@@ -10,7 +11,7 @@ set class Range
 removeallmethods
 removeallclassmethods
 
-category: 'Accessing'
+category: '*maglev-Accessing'
 
 method:
 excludeEnd
@@ -26,7 +27,7 @@ limit
   ^ excludeEnd ifTrue:[ to ] ifFalse:[ to + by ]
 %
 
-category: 'Comparing'
+category: '*maglev-Comparing'
 method: 
 = aRange
 
@@ -51,7 +52,7 @@ hash
 
 ! do: deleted
 
-category: 'Instance Creation'
+category: '*maglev-Instance Creation'
 classmethod: 
 from: aStart to: anEnd
 
@@ -70,7 +71,7 @@ from: aStart to: anEnd by: anIncrement
 ^ self basicNew _from: aStart to: anEnd by: anIncrement
 %
 
-category: 'Private'
+category: '*maglev-Private'
 method:
 _from: aStart to: anEnd by: anInc
 

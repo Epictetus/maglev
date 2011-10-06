@@ -1,3 +1,4 @@
+category: '*maglev-as yet unclassified'
 !=========================================================================
 ! Copyright (C) VMware, Inc. 2008-2011.  All Rights Reserved.
 !
@@ -9,7 +10,7 @@ set class System
 
 !  additional methods  for System to support Ruby 
 
-category: 'Ruby Support'
+category: '*maglev-Ruby Support'
 classmethod:
 enableContinuations
 

@@ -1,3 +1,4 @@
+category: '*maglev-as yet unclassified'
 ! file image/ruby/GsObjectSecurityPolicies.gs
 run
   "following classes moved to DataCuratorObjectSecurityPolicy because they have
