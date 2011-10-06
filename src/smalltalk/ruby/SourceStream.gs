@@ -7,8 +7,8 @@ category: '*maglev-as yet unclassified'
 !=========================================================================
 doit
 UserGlobals at:#SourceStream ifAbsent:[
-Object subclass: 'SourceStream'
-category: 'MagLev-User Classes'  instVarNames: #(
+ Object subclass: 'SourceStream'
+  instVarNames: #(
     position
     input
     inputSize 
@@ -25,8 +25,8 @@ category: 'MagLev-User Classes'  instVarNames: #(
 %
 doit
 UserGlobals at:#FileSourceStream ifAbsent:[
-SourceStream subclass: 'FileSourceStream'
-category: 'MagLev-User Classes'  instVarNames: #()
+ SourceStream subclass: 'FileSourceStream'
+  instVarNames: #()
   classVars: #()  classInstVars: #()  poolDictionaries: { }
   inDictionary: UserGlobals 
 ]

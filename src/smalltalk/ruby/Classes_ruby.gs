@@ -100,43 +100,43 @@ run
 !  RubySocket created in bom.c now
 expectvalue %String
 run
-RubySocket _newKernelSubclass: 'IPSocket'
-category: 'MagLev-User Classes'      instVarNames:#( ) 
+ RubySocket _newKernelSubclass: 'IPSocket'
+      instVarNames:#( ) 
       inDictionary: Globals 
       
 %
 expectvalue %String
 run
-IPSocket _newKernelSubclass: 'TCPSocket'
-category: 'MagLev-User Classes'      instVarNames:#() 
+ IPSocket _newKernelSubclass: 'TCPSocket'
+      instVarNames:#() 
       inDictionary: Globals 
       
 %
 expectvalue %String
 run
-TCPSocket _newKernelSubclass: 'TCPServer'
-category: 'MagLev-User Classes'      instVarNames:#() 
+ TCPSocket _newKernelSubclass: 'TCPServer'
+      instVarNames:#() 
       inDictionary: Globals 
       
 %
 expectvalue %String
 run
-IPSocket _newKernelSubclass: 'UDPSocket'
-category: 'MagLev-User Classes'      instVarNames:#() 
+ IPSocket _newKernelSubclass: 'UDPSocket'
+      instVarNames:#() 
       inDictionary: Globals 
       
 %
 expectvalue %String
 run
-RubySocket _newKernelSubclass: 'UNIXSocket'
-category: 'MagLev-User Classes'      instVarNames:#( ) 
+ RubySocket _newKernelSubclass: 'UNIXSocket'
+      instVarNames:#( ) 
       inDictionary: Globals 
       
 %
 expectvalue %String
 run
-UNIXSocket _newKernelSubclass: 'UNIXServer'
-category: 'MagLev-User Classes'      instVarNames:#( )
+ UNIXSocket _newKernelSubclass: 'UNIXServer'
+      instVarNames:#( )
       inDictionary: Globals
 %
 
@@ -164,7 +164,6 @@ res := String new .
    'SocketErrorEAGAIN' 
  } do:[ :str |
  res addAll: ( SocketError _newKernelSubclass: str
-category: 'MagLev-User Classes' 
       		instVarNames: #( )
     		inDictionary: Globals
     		 ) .
@@ -220,41 +219,41 @@ true
 expectvalue %String
 run
 Exception _newKernelSubclass: 'RubySystemExit'
-category: 'MagLev-User Classes'                instVarNames: #( status runAtExitHandlers )
+                instVarNames: #( status runAtExitHandlers )
                 inDictionary: Globals
                  
 %
 expectvalue %String
 run
 Exception _newKernelSubclass: 'RubyScriptError'
-category: 'MagLev-User Classes'                instVarNames: #( )
+                instVarNames: #( )
                 inDictionary: Globals
                  
 %
 expectvalue %String
 run
 RubyScriptError _newKernelSubclass: 'RubyNotImplementedError'
-category: 'MagLev-User Classes'                instVarNames: #( )
+                instVarNames: #( )
                 inDictionary: Globals
                  
 %
 expectvalue %String
 run
 OffsetError _newKernelSubclass: 'RubyStopIterationError'
-category: 'MagLev-User Classes'                instVarNames: #( )
+                instVarNames: #( )
                 inDictionary: Globals
                 
 %
 expectvalue %String
 run
 ImproperOperation _newKernelSubclass:'RubyRuntimeError'
-category: 'MagLev-User Classes'                instVarNames: #( )
+                instVarNames: #( )
                 inDictionary: Globals
 %
 expectvalue %String
 run
 IOError _newKernelSubclass:'EOFError'
-category: 'MagLev-User Classes'  instVarNames: #( )
+  instVarNames: #( )
                 inDictionary: Globals
 %
 
@@ -266,7 +265,6 @@ category: 'MagLev-User Classes'  instVarNames: #( )
 expectvalue %String
 run
 Object  _newKernelSubclass:'RubyDirectory'  "not a reserved oop yet"
-category: 'MagLev-User Classes' 
   instVarNames: #( entries path index closed range )
   inDictionary: Globals
   constraints: { { #entries . Array } }
@@ -276,7 +274,6 @@ category: 'MagLev-User Classes'
 expectvalue %String
 run
 RubyHash  _newKernelSubclass:'RubyEnv'  "not a reserved oop yet"
-category: 'MagLev-User Classes' 
   instVarNames: #( )
   inDictionary: Globals
   
@@ -287,7 +284,6 @@ category: 'MagLev-User Classes'
 expectvalue %String
 run
 Object  _newKernelSubclass:'RubyThreadGroup'  "not a reserved oop yet"
-category: 'MagLev-User Classes' 
   instVarNames: #( closed )
   inDictionary: Globals
   constraints: { { #closed . Boolean } }
@@ -298,7 +294,7 @@ category: 'MagLev-User Classes'
 expectvalue %String
 run
 RubyHash _newKernelSubclass:'RubyIdentityHash' "not a reserved oop"
-category: 'MagLev-User Classes'  instVarNames: #()
+  instVarNames: #()
   inDictionary: Globals
   
 %
@@ -308,7 +304,6 @@ run
 " new class,  RubyParser:: in C code maps to RubyParserM for now"
 (Globals includesKey: #RubyParserM) ifFalse:[
   Object subclass: #RubyParserM
-category: 'MagLev-User Classes' 
      instVarNames: #( )
      classVars: #()
      classInstVars: #()
