@@ -1,39 +1,7 @@
 
 doit
-MCStWriter subclass: 'MCGsWriter'
-	instVarNames: #( fileStreams dependencyIndex currentClass)
-	classVars: #()
-	classInstVars: #()
-	poolDictionaries: #()
-	inDictionary: ''
-	category: 'MagLev-Tools'
-	options: #()
-
-%
-
-set class MCGsWriter
-removeallmethods
-removeallclassmethods
-
-doit
-Lag25000CmwcRandom subclass: 'RubyRandom'
-	instVarNames: #( seed)
-	classVars: #()
-	classInstVars: #()
-	poolDictionaries: #()
-	inDictionary: ''
-	category: 'MagLev-Runtime'
-	options: #()
-
-%
-
-set class RubyRandom
-removeallmethods
-removeallclassmethods
-
-doit
-RubyRandom subclass: 'RubyRandomNp'
-	instVarNames: #()
+Semaphore subclass: 'RubyThreadCriticalMutex'
+	instVarNames: #( owner)
 	classVars: #()
 	classInstVars: #()
 	poolDictionaries: #()
@@ -43,7 +11,119 @@ RubyRandom subclass: 'RubyRandomNp'
 
 %
 
-set class RubyRandomNp
+set class RubyThreadCriticalMutex
+removeallmethods
+removeallclassmethods
+
+doit
+IOError subclass: 'EOFError'
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
+	poolDictionaries: #()
+	inDictionary: 'Globals'
+	category: 'MagLev-User Classes'
+	options: #()
+
+%
+
+set class EOFError
+removeallmethods
+removeallclassmethods
+
+doit
+TestCase subclass: 'RubyWrapperTest'
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
+	poolDictionaries: #()
+	inDictionary: ''
+	category: 'MagLev-Tests'
+	options: #()
+
+%
+
+set class RubyWrapperTest
+removeallmethods
+removeallclassmethods
+
+doit
+Exception subclass: 'RubyScriptError'
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
+	poolDictionaries: #()
+	inDictionary: 'Globals'
+	category: 'MagLev-User Classes'
+	options: #()
+
+%
+
+set class RubyScriptError
+removeallmethods
+removeallclassmethods
+
+doit
+RubyScriptError subclass: 'RubyLoadError'
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
+	poolDictionaries: #()
+	inDictionary: ''
+	category: 'MagLev-Tools'
+	options: #()
+
+%
+
+set class RubyLoadError
+removeallmethods
+removeallclassmethods
+
+doit
+RubyScriptError subclass: 'RubyNotImplementedError'
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
+	poolDictionaries: #()
+	inDictionary: 'Globals'
+	category: 'MagLev-User Classes'
+	options: #()
+
+%
+
+set class RubyNotImplementedError
+removeallmethods
+removeallclassmethods
+
+doit
+RubyScriptError subclass: 'RubyParseError'
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
+	poolDictionaries: #()
+	inDictionary: ''
+	category: 'MagLev-Tools'
+	options: #()
+
+%
+
+set class RubyParseError
+removeallmethods
+removeallclassmethods
+
+doit
+Exception subclass: 'RubySystemExit'
+	instVarNames: #( status runAtExitHandlers)
+	classVars: #()
+	classInstVars: #()
+	poolDictionaries: #()
+	inDictionary: 'Globals'
+	category: 'MagLev-User Classes'
+	options: #()
+
+%
+
+set class RubySystemExit
 removeallmethods
 removeallclassmethods
 
@@ -144,66 +224,18 @@ removeallmethods
 removeallclassmethods
 
 doit
-Array subclass: 'RubyLexicalPath'
-	instVarNames: #()
+Object subclass: 'IndentingStream'
+	instVarNames: #( indentLevel stream)
 	classVars: #()
 	classInstVars: #()
 	poolDictionaries: #()
-	inDictionary: ''
-	category: 'MagLev-AST'
+	inDictionary: 'Globals'
+	category: 'MagLev-User Classes'
 	options: #()
 
 %
 
-set class RubyLexicalPath
-removeallmethods
-removeallclassmethods
-
-doit
-Array subclass: 'RubyPersistableCompilerStack'
-	instVarNames: #()
-	classVars: #()
-	classInstVars: #()
-	poolDictionaries: #()
-	inDictionary: ''
-	category: 'MagLev-AST'
-	options: #()
-
-%
-
-set class RubyPersistableCompilerStack
-removeallmethods
-removeallclassmethods
-
-doit
-RubyPersistableCompilerStack subclass: 'RubyCompilerStack'
-	instVarNames: #()
-	classVars: #()
-	classInstVars: #()
-	poolDictionaries: #()
-	inDictionary: ''
-	category: 'MagLev-AST'
-	options: #( instancesNonPersistent)
-
-%
-
-set class RubyCompilerStack
-removeallmethods
-removeallclassmethods
-
-doit
-RubyCompilerStack subclass: 'RubyCompilerStackDbg'
-	instVarNames: #()
-	classVars: #()
-	classInstVars: #()
-	poolDictionaries: #()
-	inDictionary: ''
-	category: 'MagLev-AST'
-	options: #( instancesNonPersistent)
-
-%
-
-set class RubyCompilerStackDbg
+set class IndentingStream
 removeallmethods
 removeallclassmethods
 
@@ -487,6 +519,23 @@ Object subclass: 'RubyContext'
 %
 
 set class RubyContext
+removeallmethods
+removeallclassmethods
+
+doit
+Object subclass: 'RubyDirectory'
+	instVarNames: #( entries path index
+	                  closed range)
+	classVars: #()
+	classInstVars: #()
+	poolDictionaries: #()
+	inDictionary: 'Globals'
+	category: 'MagLev-User Classes'
+	options: #()
+
+%
+
+set class RubyDirectory
 removeallmethods
 removeallclassmethods
 
@@ -2873,6 +2922,22 @@ removeallmethods
 removeallclassmethods
 
 doit
+Object subclass: 'RubyParserM'
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
+	poolDictionaries: #()
+	inDictionary: 'Globals'
+	category: 'MagLev-User Classes'
+	options: #()
+
+%
+
+set class RubyParserM
+removeallmethods
+removeallclassmethods
+
+doit
 Object subclass: 'RubyPersistableCompilerState'
 	instVarNames: #( envId fileStack scopeStack
 	                  lexLevel lexLevelStack compilerStack methStack
@@ -2990,6 +3055,22 @@ removeallmethods
 removeallclassmethods
 
 doit
+Object subclass: 'RubyThreadGroup'
+	instVarNames: #( closed)
+	classVars: #()
+	classInstVars: #()
+	poolDictionaries: #()
+	inDictionary: 'Globals'
+	category: 'MagLev-User Classes'
+	options: #()
+
+%
+
+set class RubyThreadGroup
+removeallmethods
+removeallclassmethods
+
+doit
 Object subclass: 'RubyUnboundMeth'
 	instVarNames: #( gsmeth nonBridgeMeth arity
 	                  execBridge selPrefix)
@@ -3055,24 +3136,88 @@ removeallmethods
 removeallclassmethods
 
 doit
-TransientMutex subclass: 'RubyTransientMutex'
-	instVarNames: #( owner)
+Array subclass: 'RubyLexicalPath'
+	instVarNames: #()
 	classVars: #()
 	classInstVars: #()
 	poolDictionaries: #()
 	inDictionary: ''
-	category: 'MagLev-Runtime'
-	options: #( dbTransient)
+	category: 'MagLev-AST'
+	options: #()
 
 %
 
-set class RubyTransientMutex
+set class RubyLexicalPath
 removeallmethods
 removeallclassmethods
 
 doit
-RubyScriptError subclass: 'RubyLoadError'
+Array subclass: 'RubyPersistableCompilerStack'
 	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
+	poolDictionaries: #()
+	inDictionary: ''
+	category: 'MagLev-AST'
+	options: #()
+
+%
+
+set class RubyPersistableCompilerStack
+removeallmethods
+removeallclassmethods
+
+doit
+RubyPersistableCompilerStack subclass: 'RubyCompilerStack'
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
+	poolDictionaries: #()
+	inDictionary: ''
+	category: 'MagLev-AST'
+	options: #( instancesNonPersistent)
+
+%
+
+set class RubyCompilerStack
+removeallmethods
+removeallclassmethods
+
+doit
+RubyCompilerStack subclass: 'RubyCompilerStackDbg'
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
+	poolDictionaries: #()
+	inDictionary: ''
+	category: 'MagLev-AST'
+	options: #( instancesNonPersistent)
+
+%
+
+set class RubyCompilerStackDbg
+removeallmethods
+removeallclassmethods
+
+doit
+ImproperOperation subclass: 'RubyRuntimeError'
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
+	poolDictionaries: #()
+	inDictionary: 'Globals'
+	category: 'MagLev-User Classes'
+	options: #()
+
+%
+
+set class RubyRuntimeError
+removeallmethods
+removeallclassmethods
+
+doit
+MCStWriter subclass: 'MCGsWriter'
+	instVarNames: #( fileStreams dependencyIndex currentClass)
 	classVars: #()
 	classInstVars: #()
 	poolDictionaries: #()
@@ -3082,55 +3227,7 @@ RubyScriptError subclass: 'RubyLoadError'
 
 %
 
-set class RubyLoadError
-removeallmethods
-removeallclassmethods
-
-doit
-RubyScriptError subclass: 'RubyParseError'
-	instVarNames: #()
-	classVars: #()
-	classInstVars: #()
-	poolDictionaries: #()
-	inDictionary: ''
-	category: 'MagLev-Tools'
-	options: #()
-
-%
-
-set class RubyParseError
-removeallmethods
-removeallclassmethods
-
-doit
-TestCase subclass: 'RubyWrapperTest'
-	instVarNames: #()
-	classVars: #()
-	classInstVars: #()
-	poolDictionaries: #()
-	inDictionary: ''
-	category: 'MagLev-Tests'
-	options: #()
-
-%
-
-set class RubyWrapperTest
-removeallmethods
-removeallclassmethods
-
-doit
-WriteStream subclass: 'IndentedStream'
-	instVarNames: #( level locals)
-	classVars: #()
-	classInstVars: #()
-	poolDictionaries: #()
-	inDictionary: ''
-	category: 'MagLev-Tools'
-	options: #()
-
-%
-
-set class IndentedStream
+set class MCGsWriter
 removeallmethods
 removeallclassmethods
 
@@ -3147,6 +3244,182 @@ ProtoObject subclass: 'RubyWrapper'
 %
 
 set class RubyWrapper
+removeallmethods
+removeallclassmethods
+
+doit
+RubyHash subclass: 'RubyEnv'
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
+	poolDictionaries: #()
+	inDictionary: 'Globals'
+	category: 'MagLev-User Classes'
+	options: #( disallowGciStore)
+
+%
+
+set class RubyEnv
+removeallmethods
+removeallclassmethods
+
+doit
+RubyHash subclass: 'RubyIdentityHash'
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
+	poolDictionaries: #()
+	inDictionary: 'Globals'
+	category: 'MagLev-User Classes'
+	options: #( disallowGciStore)
+
+%
+
+set class RubyIdentityHash
+removeallmethods
+removeallclassmethods
+
+doit
+Error subclass: 'RubyTimeoutError'
+	instVarNames: #()
+	classVars: #( RubyMethProtection)
+	classInstVars: #()
+	poolDictionaries: #()
+	inDictionary: ''
+	category: 'MagLev-Tools'
+	options: #()
+
+%
+
+set class RubyTimeoutError
+removeallmethods
+removeallclassmethods
+
+doit
+TransientMutex subclass: 'RubyTransientMutex'
+	instVarNames: #( owner)
+	classVars: #()
+	classInstVars: #()
+	poolDictionaries: #()
+	inDictionary: ''
+	category: 'MagLev-Runtime'
+	options: #( dbTransient)
+
+%
+
+set class RubyTransientMutex
+removeallmethods
+removeallclassmethods
+
+doit
+RubySocket subclass: 'IPSocket'
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
+	poolDictionaries: #()
+	inDictionary: 'Globals'
+	category: 'MagLev-User Classes'
+	options: #( instancesNonPersistent)
+
+%
+
+set class IPSocket
+removeallmethods
+removeallclassmethods
+
+doit
+IPSocket subclass: 'TCPSocket'
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
+	poolDictionaries: #()
+	inDictionary: 'Globals'
+	category: 'MagLev-User Classes'
+	options: #( instancesNonPersistent)
+
+%
+
+set class TCPSocket
+removeallmethods
+removeallclassmethods
+
+doit
+TCPSocket subclass: 'TCPServer'
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
+	poolDictionaries: #()
+	inDictionary: 'Globals'
+	category: 'MagLev-User Classes'
+	options: #( instancesNonPersistent)
+
+%
+
+set class TCPServer
+removeallmethods
+removeallclassmethods
+
+doit
+IPSocket subclass: 'UDPSocket'
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
+	poolDictionaries: #()
+	inDictionary: 'Globals'
+	category: 'MagLev-User Classes'
+	options: #( instancesNonPersistent)
+
+%
+
+set class UDPSocket
+removeallmethods
+removeallclassmethods
+
+doit
+RubySocket subclass: 'UNIXSocket'
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
+	poolDictionaries: #()
+	inDictionary: 'Globals'
+	category: 'MagLev-User Classes'
+	options: #( instancesNonPersistent)
+
+%
+
+set class UNIXSocket
+removeallmethods
+removeallclassmethods
+
+doit
+UNIXSocket subclass: 'UNIXServer'
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
+	poolDictionaries: #()
+	inDictionary: 'Globals'
+	category: 'MagLev-User Classes'
+	options: #( instancesNonPersistent)
+
+%
+
+set class UNIXServer
+removeallmethods
+removeallclassmethods
+
+doit
+WriteStream subclass: 'IndentedStream'
+	instVarNames: #( level locals)
+	classVars: #()
+	classInstVars: #()
+	poolDictionaries: #()
+	inDictionary: ''
+	category: 'MagLev-Tools'
+	options: #()
+
+%
+
+set class IndentedStream
 removeallmethods
 removeallclassmethods
 
@@ -3184,8 +3457,24 @@ removeallmethods
 removeallclassmethods
 
 doit
-Semaphore subclass: 'RubyThreadCriticalMutex'
-	instVarNames: #( owner)
+Lag25000CmwcRandom subclass: 'RubyRandom'
+	instVarNames: #( seed)
+	classVars: #()
+	classInstVars: #()
+	poolDictionaries: #()
+	inDictionary: ''
+	category: 'MagLev-Runtime'
+	options: #()
+
+%
+
+set class RubyRandom
+removeallmethods
+removeallclassmethods
+
+doit
+RubyRandom subclass: 'RubyRandomNp'
+	instVarNames: #()
 	classVars: #()
 	classInstVars: #()
 	poolDictionaries: #()
@@ -3195,7 +3484,23 @@ Semaphore subclass: 'RubyThreadCriticalMutex'
 
 %
 
-set class RubyThreadCriticalMutex
+set class RubyRandomNp
+removeallmethods
+removeallclassmethods
+
+doit
+OffsetError subclass: 'RubyStopIterationError'
+	instVarNames: #()
+	classVars: #()
+	classInstVars: #()
+	poolDictionaries: #()
+	inDictionary: 'Globals'
+	category: 'MagLev-User Classes'
+	options: #()
+
+%
+
+set class RubyStopIterationError
 removeallmethods
 removeallclassmethods
 
@@ -3212,21 +3517,5 @@ Notification subclass: 'RubyDynamicVariable'
 %
 
 set class RubyDynamicVariable
-removeallmethods
-removeallclassmethods
-
-doit
-Error subclass: 'RubyTimeoutError'
-	instVarNames: #()
-	classVars: #( RubyMethProtection)
-	classInstVars: #()
-	poolDictionaries: #()
-	inDictionary: ''
-	category: 'MagLev-Tools'
-	options: #()
-
-%
-
-set class RubyTimeoutError
 removeallmethods
 removeallclassmethods
