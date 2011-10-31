@@ -1,7 +1,6 @@
 fails:String#% raises an ArgumentError for unused arguments when $DEBUG is true
 fails:String#% replaces trailing absolute argument specifier without type with percent sign
 fails:String#% allows more than one digit of position
-fails:String#% raises an ArgumentError when absolute and relative argument numbers are mixed
 fails:String#% allows positional arguments for width star and precision star arguments
 fails:String#% allows negative width to imply '-' flag
 fails:String#% ignores negative precision
@@ -24,3 +23,4 @@ fails:String#% behaves as if calling Kernel#Integer for %o argument, if it does 
 fails:String#% behaves as if calling Kernel#Integer for %u argument, if it does not respond to #to_ary
 fails:String#% behaves as if calling Kernel#Integer for %x argument, if it does not respond to #to_ary
 fails:String#% behaves as if calling Kernel#Integer for %X argument, if it does not respond to #to_ary
+fails:String#% pads with spaces for %E with Inf, -Inf, and NaN

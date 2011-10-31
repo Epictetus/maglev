@@ -1,4 +1,3 @@
-fails:IO#putc raises IOError on closed stream
 fails:IO#putc calls #to_int to convert an object to a Integer
 fails:IO#putc raises IOError on a closed stream
 fails:IO#putc raises an TypeError when passed nil
