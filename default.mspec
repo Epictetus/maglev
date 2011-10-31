@@ -18,7 +18,12 @@ class MSpecScript
                 "^spec/rubyspec/core/basicobject/not_spec.rb",
                 "^spec/rubyspec/core/kernel/exec_spec.rb",
                 "^spec/rubyspec/core/kernel/system_spec.rb",
+                "^spec/rubyspec/core/marshal/dump_spec.rb",
+                "^spec/rubyspec/core/marshal/load_spec.rb",
                 "^spec/rubyspec/core/numeric/step_spec.rb",           # 26876
+                "^spec/rubyspec/core/process/wait_spec.rb",
+                "^spec/rubyspec/core/process/wait2_spec.rb",
+                "^spec/rubyspec/core/process/waitall_spec.rb",
                 "^spec/rubyspec/core/string/modulo_spec.rb",
                 "^spec/rubyspec/core/string/unpack/a_spec.rb",
                 "^spec/rubyspec/core/thread/alive_spec.rb",
