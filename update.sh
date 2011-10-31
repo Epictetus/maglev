@@ -73,9 +73,9 @@ echo "[Info] Installing $gss_name on $machine_name"
 
 # Look for either wget or curl to download GemStone
 if [ -e "`which wget 2>/dev/null`" ]; then
-    cmd="`which wget`"
+    cmd="`which wget` --quiet"
 elif [ -e "`which curl 2>/dev/null`" ]; then
-    cmd="`which curl` -O"
+    cmd="`which curl` -s -O"
 else
     echo "[Error] Neither wget nor curl is available. Install one of them and rerun this script."
     exit 1
@@ -117,7 +117,7 @@ rm -f etc/maglev.demo.key
 ln -sf maglev.demo.key-$PLATFORM etc/maglev.demo.key
 # Make sure we have specs and benchmarks.
 echo "[Info] updating MSpec and RubySpec submodules"
-git submodule update --quiet --init 
+git submodule --quiet update --init 
 
 # Create a default repository called "maglev" and generate the MagLev HTML documentation
 # Check for existence of required executable rake
